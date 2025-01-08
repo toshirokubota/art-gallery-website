@@ -3,17 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Gradient</title>
+    <title>Right Justify Flex Item</title>
     <style>
-        .gradient-text {
-            font-size: 48px; /* Adjust font size as needed */
-            background: linear-gradient(90deg, red, blue);
-            -webkit-background-clip: text;
-            color: transparent;
+        .container {
+            display: flex;
+            justify-content: left; /* Aligns items to the right */
+            border: 1px solid #ccc; /* Optional: to visualize the container */
+        }
+        .item {
+            width: 30%;
+            background-color: lightblue; /* Optional: to visualize the item */
+            padding: 10px;
+            border: solid 1px black;
+        }
+        .item:nth-child(2) {
+            margin-left: auto;
         }
     </style>
 </head>
 <body>
-    <p class="gradient-text">Hello</p>
+    <div class="container">
+        <div class="item"><span>Right Aligned Item</span></div>
+        <div class="item"><span>Right Aligned Item</span></div>
+    </div>
 </body>
 </html>
