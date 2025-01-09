@@ -23,7 +23,7 @@
   crossorigin=""></script>
 
   <style>
-    #map {height: 360px}
+    #map {height: 550px}
   </style>
 </head>
 
@@ -89,22 +89,16 @@
 
   var marker = L.marker([41.48212, -71.31060]).addTo(map);
 
-  // var circle = L.circle([41.48212, -71.31060], {
-  //   color: 'red',
-  //   fillColor: '#f03',
-  //   fillOpacity: 0.5,
-  //   radius: 500
-  // }).addTo(map);
+  window.onresize = ()=> {
+    if(window.innerWidth <= 512) {
+      document.getElementById('map').style.height = '550px';
+    } else if(window.innerWidth < 1024) {
+      document.getElementById('map').style.height = '600px';
+    } else {
+      document.getElementById('map').style.height = '600px';
+    }
+  }
 
-  // var polygon = L.polygon([
-  //   [41.48211, -71.31059],
-  //   [41.48211, -71.31061],
-  //   [41.48213, -71.31060]
-  // ]).addTo(map);
-
-  // marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-  // circle.bindPopup("I am a circle.");
-  // polygon.bindPopup("I am a polygon.");
 </script>
 
 </html>
