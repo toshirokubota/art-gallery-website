@@ -91,6 +91,7 @@ main {
     display: flex;
     flex-direction: column;
     padding: 0em 0.5em;
+    gap: 1em;
 }
 #cover-container img {
     flex: 1;
@@ -109,7 +110,6 @@ main {
     display: block;
 }
 #logo-dark {
-    margin: 1em 0;
     width: 50%;
 }
 #our-location-button {
@@ -130,6 +130,7 @@ main {
     text-align: center;
     font-size: 0.75em;
     text-transform: uppercase;
+    padding: 0.5em 0;
 }
 #our-location-button div {
     flex: 1;
@@ -151,11 +152,11 @@ main {
     background-color: #151515;
 }
 #your-day h2 {
-    white-space: pre-line;
+    width: 100%;
 }
 .ssn-icons {
     display: flex;
-    margin: 0.25em 1em;
+    /* margin: 0.25em 1em; */
     gap: 0.5em;
 }
 .ssn-icons img {
@@ -205,6 +206,7 @@ main {
     font-size: 0.75em;
     text-transform: uppercase;
     background-color: var(--brown-color);
+    padding: 0.5em 0;
 }
 .back-to-home-button div {
     flex: 1;
@@ -247,38 +249,47 @@ main {
     display: flex;
     flex-direction: column;
     padding: 0.5em;
+    gap: 2em;
 }
-.gallery-footer > h3 {
-    flex: 1 1 30%
+.gallery-footer div:first-child {
+    flex: 1 1 25%
 }
 .gallery-footer-preamble {
-    flex: 1 1 40%;
+    flex: 1 1 45%;
 }
 .ssn-icons {
-    flex: 1 1 30%;
+    flex: 0 1 30%;
 }
 
 @media only screen and (min-width: 600px) {
     #cover-container {
         display: grid;
-        grid-template-columns: 45fr 10fr 45fr;
-        grid-template-rows: repeat(1fr, 5);
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 2em;
     }
     #hero-box {
-        grid-column: 1/3;
-        grid-row: 1/6;
+        grid-column: 1/2;
+        grid-row: 1/4;
     }
     #logo-box-light {
-        grid-column: 2/4;
-        grid-row: 2/3;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        margin-left: -4em;
+        align-self: self-end;
     }
     #gallery-preamble {
-        grid-column: 2/4;
-        grid-row: 3/4;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        margin-left: -4em;
+        align-self: center;
+        width: 90%
     }
     #our-location-button {
-        grid-column: 2/4;
-        grid-row: 4/5;
+        grid-column: 2/3;
+        grid-row: 3/4;
+        margin-left: -4em;
+        align-self: self-start;
     }
 
     #inset-container {
@@ -320,11 +331,14 @@ main {
     #come-be-inspired {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        gap: 2em;
+        /* align-items: center;
+        justify-content: space-around; */
         grid-column: 3/4;
         grid-row: 3/4;
-        padding: 1em;
+        padding: 4em 1em;
+        /* width: 80%; */
+        /* height: 100%; */
     }
     .gallery-footer {
         display: flex;
@@ -344,7 +358,7 @@ main {
         display: grid;
         grid-template-columns: 3fr 4fr 3fr ;
         grid-template-rows: 3fr 3fr 4fr;
-        /* position: relative; */
+        gap: 0;
     }
     #hero-box {
         grid-column: 2/3;
@@ -357,17 +371,19 @@ main {
     #logo-box-dark {
         display: block;
         grid-column: 1/2;
-        grid-row: 1/5;
+        grid-row: 1/4;
         position: relative;
         overflow: hidden;
         z-index: 2;
     }
     #logo-box-light {
         grid-column: 1/2;
-        grid-row: 1/5;
+        grid-row: 1/4;
         position: relative;
         overflow: visible;
+        align-self: normal;
         z-index: 1;
+        margin-left: 0; /* undo the margin from tablet */
     }
     #logo-light {
         display: block;
@@ -430,7 +446,7 @@ main {
         grid-row: 1/2;
         padding: 1em;
     }
-    #come-be-inspired {
+    /* #come-be-inspired {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -438,6 +454,6 @@ main {
         grid-column: 3/4;
         grid-row: 3/4;
         padding: 1em;
-    }
+    } */
 }
 
