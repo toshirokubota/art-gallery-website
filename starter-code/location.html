@@ -31,8 +31,6 @@
   <main>
     <div class="location-container">
       <div class="location-map">
-        <div id="map"></div>
-        <!-- <img src="./assets/mobile/image-map.png" alt="city map around the museum" /> -->
         <div class="back-to-home-button">
           <a href="./index.html">
             <div>
@@ -41,6 +39,8 @@
             <span>Back to Home</span>
           </a>
         </div>
+        <div id="map"></div>
+        <!-- <img src="./assets/mobile/image-map.png" alt="city map around the museum" /> -->
       </div>
       <div class="our-location black-bg">
         <div>
@@ -81,6 +81,7 @@
 <script>
   const x = 41.48212, y = -71.31060;
   var map = L.map('map').setView([41.48212, -71.31060], 13);
+  map.scrollWheelZoom.disable();
 
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,

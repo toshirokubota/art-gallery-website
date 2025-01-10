@@ -446,14 +446,9 @@ main {
         grid-row: 1/2;
         padding: 1em;
     }
-    /* #come-be-inspired {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        grid-column: 3/4;
-        grid-row: 3/4;
-        padding: 1em;
-    } */
+    #gallery-preamble, #your-day-preamble, #come-be-inspired-preamble{
+        font-size: 22px;
+        line-height: 32px;
+    }
 }
 
