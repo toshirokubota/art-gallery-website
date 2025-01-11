@@ -80,17 +80,18 @@
 
 <script>
   const x = 41.48212, y = -71.31060;
-  var map = L.map('map').setView([41.48212, -71.31060], 13);
-  map.scrollWheelZoom.disable();
+  var map = L.map('map').setView([x, y], 13);
+  //map.scrollWheelZoom.disable();
+  //L.DomEvent.disableScrollPropagation(map);
 
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);  
 
-  var marker = L.marker([41.48212, -71.31060]).addTo(map);
+  var marker = L.marker([x, y]).addTo(map);
 
-  window.onresize = ()=> {
+  const setMap = ()=> {
     if(window.innerWidth <= 512) {
       document.getElementById('map').style.height = '550px';
     } else if(window.innerWidth < 1024) {
@@ -99,7 +100,8 @@
       document.getElementById('map').style.height = '600px';
     }
   }
-
+  window.onresize = setMap;
+  window.onload = setMap;
 </script>
 
 </html>
